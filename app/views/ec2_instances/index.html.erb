@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ec2 Instances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= form_tag({controller: "ec2_instances", action: "create"}, method: "get") do %>
+      <div>
+        <%= label_tag(:q, "Number of employees: ") %>
+        <%= text_field_tag :content, "" %>
+      </div>
+      <%= submit_tag("Create") %>
+    <% end %>
+    <% @ec2_instances.each do |ec2_instance| %>
+      <tr>
+        <td><%= link_to 'Show', ec2_instance %></td>
+        <td><%= link_to 'Edit', edit_ec2_instance_path(ec2_instance) %></td>
+        <td><%= link_to 'Destroy', ec2_instance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ec2 instance', new_ec2_instance_path %>

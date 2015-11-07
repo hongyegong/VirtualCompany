@@ -1,0 +1,9 @@
+development:
+  access_key_id: "AKIAJ2JD2EKKFVDSR37A"
+  secret_access_key: "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"
+  simple_db_consistent_reads: false
+
+production:
+  access_key_id: AKIAJ2JD2EKKFVDSR37A
+  secret_access_key: "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"
+  simple_db_consistent_reads: true
